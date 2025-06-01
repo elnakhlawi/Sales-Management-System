@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sales Management System</title>
     <link rel="stylesheet" href="./css/root.css" />
-    <link rel="stylesheet" href="./css/dark-mode.css">
+    <link rel="stylesheet" href="./css/dark-mode.css" />
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
@@ -13,10 +13,33 @@
       <header class="head" id="head">
         <h2>SMS,Welcome</h2>
         <p>Sales Management System,Product Management System (CRUD)</p>
-        <div  class="i-dark-mode" id="iDarkMode"></div>
+        <div class="i-dark-mode" id="iDarkMode"></div>
       </header>
 
-      <div class="inputs" id="inputs"></div>
+      <div class="inputs" id="inputs">
+        <input type="text" class="title" id="title" placeholder="title" />
+        <div class="inputs-parent">
+          <input type="number" class="price" id="price" placeholder="price" />
+          <input type="number" class="taxes" id="taxes" placeholder="taxes" />
+          <input type="number" class="ads" id="taxes" placeholder="taxes" />
+          <input
+            type="number"
+            class="discount"
+            id="discount"
+            placeholder="discount"
+          />
+          <small class="total" id="total" placeholder="total">543</small>
+        </div>
+        <input type="number" class="count" id="count" placeholder="count" />
+        <input
+          type="text"
+          class="category"
+          id="category"
+          placeholder="category"
+        />
+        <button class="submit" id="submit">create</button>
+      </div>
+      
       <div class="outputs" id="outputs"></div>
 
       <footer class="foot" id="foot"></footer>

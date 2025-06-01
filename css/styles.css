@@ -22,11 +22,11 @@ body {
   text-transform: uppercase;
   text-align: center;
   font-weight:bold ;
-  border-radius: var(--b-radius-5);
-  -webkit-border-radius: var(--b-radius-5);
-  -moz-border-radius: var(--b-radius-5);
-  -ms-border-radius: var(--b-radius-5);
-  -o-border-radius: var(--b-radius-5);
+  border-radius: var(--b-radius-3);
+  -webkit-border-radius: var(--b-radius-3);
+  -moz-border-radius: var(--b-radius-3);
+  -ms-border-radius: var(--b-radius-3);
+  -o-border-radius: var(--b-radius-3);
 }
 .head h2 {
 }
@@ -44,4 +44,82 @@ body {
   -moz-transform: translate(500px);
   -ms-transform: translate(500px);
   -o-transform: translate(500px);
+}
+
+
+.inputs input{
+  background-color: var(--main-bg-color);
+  width:100%;
+  height: 30px;
+  margin: 4px 0;
+  padding: 4px;
+  outline: none;
+  border: none;
+  border-radius: var(--b-radius-3);
+  -webkit-border-radius: var(--b-radius-3);
+  -moz-border-radius: var(--b-radius-3);
+  -ms-border-radius: var(--b-radius-3);
+  -o-border-radius: var(--b-radius-3);
+  transition: var(--transition-0-4);
+  -webkit-transition: var(--transition-0-4);
+  -moz-transition: var(--transition-0-4);
+  -ms-transition: var(--transition-0-4);
+  -o-transition: var(--transition-0-4);
+}
+.inputs input::placeholder{
+  text-transform: capitalize;
+}
+.inputs .inputs-parent input{
+  width: 20%;
+}
+
+.inputs input:focus{
+  margin-right: 6px;
+  transform: scale(var(--main-scale));
+  -webkit-transform: scale(var(--main-scale));
+  -moz-transform: scale(var(--main-scale));
+  -ms-transform: scale(var(--main-scale));
+  -o-transform: scale(var(--main-scale));
+  background-color: var(--second-bg-color);
+
+}
+
+.inputs .total{
+  background-color: rgb(223, 91, 91);
+  padding: 5px 2px;
+  border-radius: var(--b-radius-3);
+  -webkit-border-radius: var(--b-radius-3);
+  -moz-border-radius: var(--b-radius-3);
+  -ms-border-radius: var(--b-radius-3);
+  -o-border-radius: var(--b-radius-3);
+}
+.inputs .total::before{
+  content: 'total: ';
+  text-transform: capitalize;
+}
+
+.inputs button.submit{
+  width:100%;
+  height: 30px;
+  outline:none;
+  border: none;
+  border-radius: var(--b-radius-3);
+  padding: 4px;
+  font-weight: bold;
+  background-color: var(--main-bg-color);
+  cursor: pointer;
+  -webkit-border-radius: var(--b-radius-3);
+  -moz-border-radius: var(--b-radius-3);
+  -ms-border-radius: var(--b-radius-3);
+  -o-border-radius: var(--b-radius-3);
+  transition: var(--transition-0-4);
+  -webkit-transition: var(--transition-0-4);
+  -moz-transition: var(--transition-0-4);
+  -ms-transition: var(--transition-0-4);
+  -o-transition: var(--transition-0-4);
+}
+
+.inputs button.submit:hover{
+  background-color: var(--second-bg-color);
+  letter-spacing: var( --letter-spacing-1);
 }

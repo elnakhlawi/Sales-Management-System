@@ -1,6 +1,10 @@
 :root {
   --bg-color: rgba(231, 255, 247, 0.507);
   --text-color: black;
-  --b-radius-5:5px;
+  --b-radius-3:3px;
   --main-bg-color:rgba(0, 0, 255, 0.223);
+  --second-bg-color:rgba(0, 0, 255, 0.38);
+  --main-scale:1.05;
+  --transition-0-4:0.4s;
+  --letter-spacing-1:1px;
 }
