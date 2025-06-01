@@ -10,14 +10,7 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
 }
-.dark-mode {
-  background-color: black;
-  color: white;
-}
-.i-dark-mode-active {
-  filter: invert(50%) sepia(98%) saturate(667%) hu-rotate(180deg);
-  -webkit-filter: invert(50%) sepia(98%) saturate(667%) hue-rotate(180deg);
-}
+
 .container {
   width: 80%;
   margin: auto;
@@ -25,7 +18,7 @@ body {
 .head {
   margin: 10px ;
   padding: 10px;
-  background-color: rgba(0, 0, 255, 0.223);
+  background-color: var(--main-bg-color);
   text-transform: uppercase;
   text-align: center;
   font-weight:bold ;
