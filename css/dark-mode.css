@@ -1,8 +1,12 @@
 .body-dark-mode {
-  background-color: black;
-  color: white;
+  background-color: black !important;
+  color: white !important;
 }
 .i-dark-mode-active {
   filter: invert(50%) sepia(98%) saturate(667%) hu-rotate(180deg);
   -webkit-filter: invert(50%) sepia(98%) saturate(667%) hue-rotate(180deg);
+}
+
+.btn-darke-mode{
+  color:white;
 }

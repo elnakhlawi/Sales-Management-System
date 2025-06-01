@@ -68,6 +68,7 @@ body {
 }
 .inputs input::placeholder{
   text-transform: capitalize;
+  color: rgb(148, 148, 206);
 }
 .inputs .inputs-parent input{
   width: 20%;
