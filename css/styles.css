@@ -1,0 +1,54 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+body {
+  font-family: system-ui;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+.i-dark-mode-active {
+  filter: invert(50%) sepia(98%) saturate(667%) hu-rotate(180deg);
+  -webkit-filter: invert(50%) sepia(98%) saturate(667%) hue-rotate(180deg);
+}
+.container {
+  width: 80%;
+  margin: auto;
+}
+.head {
+  margin: 10px ;
+  padding: 10px;
+  background-color: rgba(0, 0, 255, 0.223);
+  text-transform: uppercase;
+  text-align: center;
+  font-weight:bold ;
+  border-radius: var(--b-radius-5);
+  -webkit-border-radius: var(--b-radius-5);
+  -moz-border-radius: var(--b-radius-5);
+  -ms-border-radius: var(--b-radius-5);
+  -o-border-radius: var(--b-radius-5);
+}
+.head h2 {
+}
+.head p {
+}
+
+.head .i-dark-mode {
+  width: 32px;
+  height: 32px;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url("../icons/moon-solid.svg");
+  transform: translate(500px);
+  -webkit-transform: translate(500px);
+  -moz-transform: translate(500px);
+  -ms-transform: translate(500px);
+  -o-transform: translate(500px);
+}
