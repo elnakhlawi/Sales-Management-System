@@ -19,16 +19,35 @@
       <div class="inputs" id="inputs">
         <input type="text" class="title" id="title" placeholder="title" />
         <div class="inputs-parent">
-          <input type="number" class="price" id="price" placeholder="price" />
-          <input type="number" class="taxes" id="taxes" placeholder="taxes" />
-          <input type="number" class="ads" id="taxes" placeholder="taxes" />
           <input
+            onkeyup="getTotal()"
+            type="number"
+            class="price"
+            id="price"
+            placeholder="price"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            class="taxes"
+            id="taxes"
+            placeholder="taxes"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            class="ads"
+            id="ads"
+            placeholder="ads"
+          />
+          <input
+            onkeyup="getTotal()"
             type="number"
             class="discount"
             id="discount"
             placeholder="discount"
           />
-          <small class="total" id="total" placeholder="total">543</small>
+          <small class="total" id="total" placeholder="total"></small>
         </div>
         <input type="number" class="count" id="count" placeholder="count" />
         <input
@@ -66,9 +85,7 @@
             <th>update</th>
             <th>delete</th>
           </tr>
-          <tbody>
-
-          </tbody>
+          <tbody></tbody>
         </table>
       </div>
 
