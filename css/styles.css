@@ -47,7 +47,7 @@ body {
 }
 
 
-.inputs input{
+ input{
   background-color: var(--main-bg-color);
   width:100%;
   height: 30px;
@@ -74,7 +74,7 @@ body {
   width: 20%;
 }
 
-.inputs input:focus{
+ input:focus{
   margin-right: 6px;
   transform: scale(var(--main-scale));
   -webkit-transform: scale(var(--main-scale));
@@ -99,7 +99,7 @@ body {
   text-transform: capitalize;
 }
 
-.inputs button.submit{
+button{
   width:100%;
   height: 30px;
   outline:none;
@@ -120,7 +120,35 @@ body {
   -o-transition: var(--transition-0-4);
 }
 
-.inputs button.submit:hover{
+button:hover{
   background-color: var(--second-bg-color);
   letter-spacing: var( --letter-spacing-1);
+}
+.search-blok .search{
+    color: rgb(148, 148, 206);
+
+}
+.btn-search{
+display: flex;
+justify-content: space-between;
+
+}
+
+.btn-search button{
+  width: 45%;
+  font-weight: bold;
+  text-transform: capitalize;
+}
+
+.table{
+  width: 100%;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.table th{
+  text-transform: uppercase;
+}
+.table td,.table th{
+  padding: 5px;
 }
