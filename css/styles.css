@@ -4,7 +4,6 @@
   box-sizing: border-box;
 }
 
-
 body {
   font-family: system-ui;
   background-color: var(--bg-color);
@@ -15,13 +14,64 @@ body {
   width: 80%;
   margin: auto;
 }
+
+.container .popup {
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  margin-top: 20px;
+  background-color: rgba(105, 105, 147, 0.763);
+  width: 500px;
+  height: 300px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  cursor: pointer;
+  z-index: 5;
+  transition:all 0.5s;
+  -webkit-transition:all 0.5s;
+  -moz-transition:all 0.5s;
+  -ms-transition:all 0.5s;
+  -o-transition:all 0.5s;
+}
+.container .popup img {
+  width: 100px;
+  position: relative;
+  left: 50%;
+  transform: translate(-50%, -30px);
+  -webkit-transform: translate(-50%, -30px);
+  -moz-transform: translate(-50%, -30px);
+  -ms-transform: translate(-50%, -30px);
+  -o-transform: translate(-50%, -30px);
+}
+.container .popup h2 {
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
+  position: relative;
+  top: 20%;
+  left:50%;
+  transform: translate(-18%, -20%);
+  -webkit-transform: translate(-18%, -20%);
+  -moz-transform: translate(-18%, -20%);
+  -ms-transform: translate(-18%, -20%);
+  -o-transform: translate(-18%, -20%);
+}
+.open {
+  opacity: 1 !important;
+  top:50% !important;
+}
 .head {
-  margin: 10px ;
+  margin: 10px;
   padding: 10px;
   background-color: var(--main-bg-color);
   text-transform: uppercase;
   text-align: center;
-  font-weight:bold ;
+  font-weight: bold;
   border-radius: var(--b-radius-3);
   -webkit-border-radius: var(--b-radius-3);
   -moz-border-radius: var(--b-radius-3);
@@ -46,10 +96,9 @@ body {
   -o-transform: translate(500px);
 }
 
-
- input{
+input {
   background-color: var(--main-bg-color);
-  width:100%;
+  width: 100%;
   height: 30px;
   margin: 4px 0;
   padding: 4px;
@@ -66,15 +115,15 @@ body {
   -ms-transition: var(--transition-0-4);
   -o-transition: var(--transition-0-4);
 }
-.inputs input::placeholder{
+.inputs input::placeholder {
   text-transform: capitalize;
   color: rgb(148, 148, 206);
 }
-.inputs .inputs-parent input{
+.inputs .inputs-parent input {
   width: 20%;
 }
 
- input:focus{
+input:focus {
   margin-right: 6px;
   transform: scale(var(--main-scale));
   -webkit-transform: scale(var(--main-scale));
@@ -82,10 +131,9 @@ body {
   -ms-transform: scale(var(--main-scale));
   -o-transform: scale(var(--main-scale));
   background-color: var(--second-bg-color);
-
 }
 
-.inputs .total{
+.inputs .total {
   background-color: rgb(223, 91, 91);
   padding: 5px 2px;
   border-radius: var(--b-radius-3);
@@ -94,15 +142,15 @@ body {
   -ms-border-radius: var(--b-radius-3);
   -o-border-radius: var(--b-radius-3);
 }
-.inputs .total::before{
-  content: 'total: ';
+.inputs .total::before {
+  content: "total: ";
   text-transform: capitalize;
 }
 
-button{
-  width:100%;
+button {
+  width: 100%;
   height: 30px;
-  outline:none;
+  outline: none;
   border: none;
   border-radius: var(--b-radius-3);
   padding: 4px;
@@ -120,35 +168,34 @@ button{
   -o-transition: var(--transition-0-4);
 }
 
-button:hover{
+button:hover {
   background-color: var(--second-bg-color);
-  letter-spacing: var( --letter-spacing-1);
+  letter-spacing: var(--letter-spacing-1);
 }
-.search-blok .search{
-    color: rgb(148, 148, 206);
-
+.search-blok .search {
+  color: rgb(148, 148, 206);
 }
-.btn-search{
-display: flex;
-justify-content: space-between;
-
+.btn-search {
+  display: flex;
+  justify-content: space-between;
 }
 
-.btn-search button{
+.btn-search button {
   width: 45%;
   font-weight: bold;
   text-transform: capitalize;
 }
 
-.table{
+.table {
   width: 100%;
   margin: 10px 0;
   text-align: center;
 }
 
-.table th{
+.table th {
   text-transform: uppercase;
 }
-.table td,.table th{
+.table td,
+.table th {
   padding: 5px;
 }
