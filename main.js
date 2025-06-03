@@ -3,6 +3,7 @@ let iDarkMode = document.getElementById("iDarkMode");
 let btnSubmit = document.getElementById("submit");
 let searchByTitle = document.getElementById("searchByTitle");
 let searchByCategory = document.getElementById("searchByCategory");
+let inpustElement=document.getElementsByTagName('input');
 
 iDarkMode.addEventListener("click", () => {
   document.body.classList.toggle("body-dark-mode");
@@ -10,6 +11,9 @@ iDarkMode.addEventListener("click", () => {
   btnSubmit.classList.toggle("btn-darke-mode");
   searchByTitle.classList.toggle("btn-darke-mode");
   searchByCategory.classList.toggle("btn-darke-mode");
+  for (let i = 0; i < inpustElement.length; i++) {
+    inpustElement[i].classList.add('iputs-color-darke-mode');
+}
 });
 //end dark mode
 
@@ -24,7 +28,8 @@ let count = document.getElementById("count");
 let category = document.getElementById("category");
 let submit = document.getElementById("submit");
 let popup = document.getElementById("popup");
-
+let tBody = document.getElementById("tbody");
+console.log(table);
 //end get all   buttons and inputs from inputs section
 
 // start get total
@@ -42,6 +47,7 @@ function getTotal() {
 
 // start create product & save localstorage
 let dataproducts;
+
 if (localStorage.products != null) {
   dataproducts = JSON.parse(localStorage.products);
 } else {
@@ -62,6 +68,7 @@ submit.onclick = function () {
   window.localStorage.products = JSON.stringify(dataproducts);
   clearData();
 };
+
 // end create product & save localstorage
 
 // start clear inputs
@@ -75,14 +82,13 @@ function clearData() {
   total.innerHTML = "";
   count.value = "";
   category.value = "";
-  showPopup()
+  showPopup();
 }
 
 // end clear inputs
 
 //start popup
 function showPopup() {
-  
   popup.classList.add("open");
   setTimeout(() => {
     popup.classList.remove("open");
@@ -90,7 +96,32 @@ function showPopup() {
 }
 //end popup
 
-//read
+// start read data
+function showData() {
+  let tableData = "";
+  for (let i = 0; i < dataproducts.length; i++) {
+    tableData += `
+        <tr> 
+          <td>${i}</td>
+          <td>${dataproducts[i].title}</td>
+          <td>${dataproducts[i].price}</td>
+          <td>${dataproducts[i].taxes}</td>
+          <td>${dataproducts[i].ads}</td> 
+          <td>${dataproducts[i].discount}</td>
+          <td>${dataproducts[i].total}</td>
+          <td>${dataproducts[i].category}</td>
+          <td><button>update</button></td>
+          <td><button>delete</button></td>
+          </tr>
+          
+  
+  `;
+  }
+  tBody.innerHTML = tableData;
+}
+
+showData();
+// end read data
 //count
 //delete
 //update
