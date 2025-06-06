@@ -3,7 +3,7 @@ let iDarkMode = document.getElementById("iDarkMode");
 let btnSubmit = document.getElementById("submit");
 let searchByTitle = document.getElementById("searchByTitle");
 let searchByCategory = document.getElementById("searchByCategory");
-let inpustElement=document.getElementsByTagName('input');
+let inpustElement = document.getElementsByTagName("input");
 
 iDarkMode.addEventListener("click", () => {
   document.body.classList.toggle("body-dark-mode");
@@ -12,8 +12,8 @@ iDarkMode.addEventListener("click", () => {
   searchByTitle.classList.toggle("btn-darke-mode");
   searchByCategory.classList.toggle("btn-darke-mode");
   for (let i = 0; i < inpustElement.length; i++) {
-    inpustElement[i].classList.add('iputs-color-darke-mode');
-}
+    inpustElement[i].classList.add("iputs-color-darke-mode");
+  }
 });
 //end dark mode
 
@@ -67,6 +67,7 @@ submit.onclick = function () {
   dataproducts.push(newproduct);
   window.localStorage.products = JSON.stringify(dataproducts);
   clearData();
+  showData();
 };
 
 // end create product & save localstorage
@@ -111,7 +112,7 @@ function showData() {
           <td>${dataproducts[i].total}</td>
           <td>${dataproducts[i].category}</td>
           <td><button>update</button></td>
-          <td><button>delete</button></td>
+          <td><button onclick='deleteItem(${i})'>delete</button></td>
           </tr>
           
   
@@ -119,11 +120,17 @@ function showData() {
   }
   tBody.innerHTML = tableData;
 }
-
 showData();
 // end read data
+
+// start delete
+function deleteItem(i) {
+  dataproducts.splice(i, 1);
+  localStorage.products = JSON.stringify(dataproducts);
+  showData();
+}
+// end delete
 //count
-//delete
 //update
 //search
 //clean data
