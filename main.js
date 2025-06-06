@@ -114,10 +114,17 @@ function showData() {
           <td><button>update</button></td>
           <td><button onclick='deleteItem(${i})'>delete</button></td>
           </tr>
-          
   
   `;
+    let deleteAll = document.getElementById("deleteAll");
+    if (dataproducts.length > 0) {
+      deleteAll.innerHTML = `<button onclick='deleteAllItems()'>delete All</button>`;
+      deleteAll.style.cssText = "margin-top:20px;";
+    } else {
+      deleteAll.innerHTML = "";
+    }
   }
+
   tBody.innerHTML = tableData;
 }
 showData();
@@ -128,6 +135,12 @@ function deleteItem(i) {
   dataproducts.splice(i, 1);
   localStorage.products = JSON.stringify(dataproducts);
   showData();
+}
+function deleteAllItems() {
+  localStorage.clear();
+  dataproducts.splice(0)
+  showData();
+
 }
 // end delete
 //count
