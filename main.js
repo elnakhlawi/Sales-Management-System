@@ -4,7 +4,8 @@ let btnSubmit = document.getElementById("submit");
 let searchByTitle = document.getElementById("searchByTitle");
 let searchByCategory = document.getElementById("searchByCategory");
 let inpustElement = document.getElementsByTagName("input");
-
+let mood = "create";
+let temp;
 iDarkMode.addEventListener("click", () => {
   document.body.classList.toggle("body-dark-mode");
   iDarkMode.classList.toggle("i-dark-mode-active");
@@ -64,12 +65,19 @@ submit.onclick = function () {
     count: count.value,
     category: category.value,
   };
-  if (newproduct.count > 1) {
-    for (let i = 0; i < newproduct.count; i++) {
+  if (mood === "create") {
+    if (newproduct.count > 1) {
+      for (let i = 0; i < newproduct.count; i++) {
+        dataproducts.push(newproduct);
+      }
+    } else {
       dataproducts.push(newproduct);
     }
   } else {
-    dataproducts.push(newproduct);
+    dataproducts[temp] = newproduct;
+    mood = "create";
+    submit.innerHTML = "create";
+    count.style.display = "block";
   }
   window.localStorage.products = JSON.stringify(dataproducts);
   clearData();
@@ -105,6 +113,7 @@ function showPopup() {
 
 // start read data
 function showData() {
+  getTotal()
   let tableData = "";
   for (let i = 0; i < dataproducts.length; i++) {
     tableData += `
@@ -117,7 +126,7 @@ function showData() {
           <td>${dataproducts[i].discount}</td>
           <td>${dataproducts[i].total}</td>
           <td>${dataproducts[i].category}</td>
-          <td><button>update</button></td>
+          <td onclick='updateData(${i})'><button>update</button></td>
           <td><button onclick='deleteItem(${i})'>delete</button></td>
           </tr>
   
@@ -147,8 +156,28 @@ function deleteAllItems() {
   dataproducts.splice(0);
   showData();
 }
+
+// start update
+function updateData(i) {
+  title.value = dataproducts[i].title;
+  price.value = dataproducts[i].price;
+  taxes.value = dataproducts[i].taxes;
+  ads.value = dataproducts[i].ads;
+  discount.value = dataproducts[i].discount;
+  getTotal();
+  count.style.display = "none";
+  category.value = dataproducts[i].category;
+  submit.innerHTML = "Update";
+  mood = "update";
+  temp = i;
+  scroll({
+    top: 0,
+    behavior: "smooth",
+  });
+}
+// end update
+
 // end delete
 //count
-//update
 //search
 //clean data
