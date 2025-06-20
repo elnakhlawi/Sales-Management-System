@@ -56,14 +56,14 @@ if (localStorage.products != null) {
 }
 submit.onclick = function () {
   let newproduct = {
-    title: title.value,
+    title: title.value.toLowerCase(),
     price: price.value,
     taxes: taxes.value,
     ads: ads.value,
     discount: discount.value,
     total: total.innerHTML,
     count: count.value,
-    category: category.value,
+    category: category.value.toLowerCase(),
   };
   if (mood === "create") {
     if (newproduct.count > 1) {
@@ -113,7 +113,7 @@ function showPopup() {
 
 // start read data
 function showData() {
-  getTotal()
+  getTotal();
   let tableData = "";
   for (let i = 0; i < dataproducts.length; i++) {
     tableData += `
@@ -156,6 +156,7 @@ function deleteAllItems() {
   dataproducts.splice(0);
   showData();
 }
+// end delete
 
 // start update
 function updateData(i) {
@@ -177,7 +178,69 @@ function updateData(i) {
 }
 // end update
 
-// end delete
+// start search
+let searchMood = "title";
+function getSearchMOode(id) {
+  let searchInput = document.getElementById("search");
+  if (id == "searchByTitle") {
+    searchMood = "title";
+  } else {
+    searchMood = "category";
+  }
+  searchInput.focus();
+  searchInput.placeholder ='Search By'+searchMood;
+  searchInput.style.color = "white";
+  searchInput.value='';
+  showData()
+}
+
+let searchInput = document.getElementById("search");
+searchInput.addEventListener( "keyup", function (e) {
+  let tableData = "";
+  if (searchMood == "title") {
+    for (let i = 0; i < dataproducts.length; i++) {
+      if (dataproducts[i].title.includes(this.value.toLowerCase())) {
+        tableData += `
+        <tr> 
+          <td>${i}</td>
+          <td>${dataproducts[i].title}</td>
+          <td>${dataproducts[i].price}</td>
+          <td>${dataproducts[i].taxes}</td>
+          <td>${dataproducts[i].ads}</td> 
+          <td>${dataproducts[i].discount}</td>
+          <td>${dataproducts[i].total}</td>
+          <td>${dataproducts[i].category}</td>
+          <td onclick='updateData(${i})'><button>update</button></td>
+          <td><button onclick='deleteItem(${i})'>delete</button></td>
+          </tr>
+  
+  `;
+      }
+    }
+  } else {
+    for (let i = 0; i < dataproducts.length; i++) {
+      if (dataproducts[i].category.includes(this.value.toLowerCase())) {
+        tableData += `
+        <tr> 
+          <td>${i}</td>
+          <td>${dataproducts[i].title}</td>
+          <td>${dataproducts[i].price}</td>
+          <td>${dataproducts[i].taxes}</td>
+          <td>${dataproducts[i].ads}</td> 
+          <td>${dataproducts[i].discount}</td>
+          <td>${dataproducts[i].total}</td>
+          <td>${dataproducts[i].category}</td>
+          <td onclick='updateData(${i})'><button>update</button></td>
+          <td><button onclick='deleteItem(${i})'>delete</button></td>
+          </tr>
+  
+  `;
+      }
+    }
+  }
+  tBody.innerHTML = tableData;
+});
+
+// end search
 //count
-//search
 //clean data
